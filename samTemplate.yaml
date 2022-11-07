@@ -6,16 +6,16 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: cu6998hw2b2
-  lambda_function:
+  HW2LF1:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: lambda_function
+      FunctionName: HW2LF1
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
       CodeUri: ./LF1_indexphotos
       Description: 'Lambda function 1 for indexing photos'
       MemorySize: 128
-      Timeout: 180
+      Timeout: 30
       Role: 'arn:aws:iam::742929579116:role/service-role/index-photos-role-v0yc0s4e'
       Events:
         S3Trigger:
