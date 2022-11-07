@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Lambda Function
+Resources:
+  cu6998hw2b2:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: cu6998hw2b2
+  hw2lf1:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: hw2lf1
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.7
+      CodeUri: ./LF1_indexphotos
+      Description: 'Lambda function 1 for indexing photos'
+      MemorySize: 128
+      Timeout: 180
+      Role: 'arn:aws:iam::742929579116:role/service-role/index-photos-role-v0yc0s4e'
+      Events:
+        S3Trigger:
+          Type: S3
+          Properties:
+            Bucket:
+              Ref: cu6998hw2b2
+            Events: s3:ObjectCreated:Put
+      Environment:
+        Variables:
+          REGION: us-east-1
