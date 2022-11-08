@@ -1,8 +1,4 @@
 # Photo-Album
-CodePipeline for lambda function 1 (index photos) is in branch 'LF'.
+Dependent libs are excluded in Folder 'CodePipeline', but they are required when use codepipeline.
 
-CodePipeline for lambda function 2 (search photos) is in branch 'LF2'.
-
-CodePipeline for frontend is in branch 'Front-end'.
-
-CloudFormation is in branch 'main', file 'CloudFormation.yaml'.
+CloudFormation is in file 'CloudFormation.yaml'.
