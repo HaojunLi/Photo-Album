@@ -13,6 +13,7 @@ def lambda_handler(event, context):
     # print("event")
     # print(event)
     s3 = event['Records'][0]['s3']
+    print("Updated")
     
     # print("s3")
     # print(s3)
